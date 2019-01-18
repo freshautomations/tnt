@@ -1,0 +1,4 @@
+.idea/*
+infra/.terraform/*
+infra/terraform.*
+

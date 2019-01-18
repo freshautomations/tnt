@@ -1,0 +1,9 @@
+---
+
+- hosts: "{{lookup('env','TESTNET')}}"
+  gather_facts: no
+  become: yes
+  become_user: root
+  tasks:
+  - name: Start service
+    service: "name=tendermint state=started"

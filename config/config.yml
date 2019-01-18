@@ -1,0 +1,12 @@
+---
+
+- hosts: "{{lookup('env','TESTNET')}}"
+  gather_facts: no
+  become: yes
+  become_user: tendermint
+  vars:
+    - domainname: '.sredev.co'
+  tasks:
+  - name: Copy config
+    copy: "src={{lookup('env','GOPATH')}}/src/github.com/tendermint/tendermint/build/node{{inventory_hostname | replace(lookup('env','TESTNET'),'') | replace(domainname,'')}}/config dest=/home/tendermint/.tendermint"
+

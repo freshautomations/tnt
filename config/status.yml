@@ -1,0 +1,13 @@
+---
+
+- hosts: "{{lookup('env','TESTNET')}}"
+  gather_facts: no
+  become: no
+  tasks:
+  - name: Gather details
+    systemd: name=tendermint
+    register: servicedetails
+
+  - name: Get status
+    debug: var=servicedetails.status.ActiveState
+

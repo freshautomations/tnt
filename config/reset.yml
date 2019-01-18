@@ -1,0 +1,9 @@
+---
+
+- hosts: "{{lookup('env','TESTNET')}}"
+  gather_facts: no
+  become: yes
+  become_user: tendermint
+  tasks:
+  - name: Unsafe reset
+    command: "/usr/bin/tendermint unsafe_reset_all"
