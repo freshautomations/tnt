@@ -5,7 +5,7 @@ all:
 	@echo "Read the README.md"
 .PHONY: all
 
-# Config: Ansible playbooks: stop, status config, reset, binary, start
+# Config: Ansible playbooks: stop, status config, reset, binary, start, ssh
 
 %:
 	@cd config && time ansible-playbook $*.yml
