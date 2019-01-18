@@ -1,7 +1,7 @@
 # TNT - Tendermint Network Troubleshooter
 
 ## Overview
-This is like localnet, except on remote machines.
+This is like localnet, except it focuses on remote machines.
 A bunch of Makefile targets to easily manage "remotenet".
 
 ## Quick tutorial
@@ -10,9 +10,13 @@ Run the below to deploy fresh binary and config on the `tik` testnet:
 ```bash
 export TESTNET=tik
 alias tnet='make -C $GOPATH/src/github.com/freshautomations/tnt'
+```
+
+The linux binary and the config needs to reside in the same place (`$GOPATH/src/github.com/tendermint/tendermint/build`) as you have it for localnet. When you created those, run:
+```bash
 tnet binary config start
 ```
-The linux binary and the config needs to reside in the same place as you have it for localnet.
+This will copy the binary and the config to the testnet and start tendermint with the `kvstore` application.
 
 Three testnets were pre-created for your convenience: tik, tak and tok. You can reach the nodes for `tik` at
 ```bash
