@@ -11,10 +11,13 @@ Do a git clone. Run the below to prepare your commands. Then get back to your te
 export TESTNET=tik
 alias tnet='make -C $GOPATH/src/github.com/freshautomations/tnt'
 
-#Add your private key to ssh-agent if you don't have it running yet
+#If you don't have SSH Agent, here's how you set it up
 ssh-agent > $HOME/.ssh/ssh-env
 source $HOME/.ssh/ssh-env
 ssh-add $HOME/.ssh/id_rsa
+
+# If you don't have ansible on OSX, here's how you set it up
+brew install ansible
 ```
 
 The linux binary and the config needs to reside in the same place (`$GOPATH/src/github.com/tendermint/tendermint/build`) as you have it for localnet. When you created those, run:
