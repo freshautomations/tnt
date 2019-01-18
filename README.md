@@ -10,6 +10,11 @@ Do a git clone. Run the below to prepare your commands. Then get back to your te
 ```bash
 export TESTNET=tik
 alias tnet='make -C $GOPATH/src/github.com/freshautomations/tnt'
+
+#Add your private key to ssh-agent if you don't have it running yet
+ssh-agent > $HOME/.ssh/ssh-env
+source $HOME/.ssh/ssh-env
+ssh-add $HOME/.ssh/id_rsa
 ```
 
 The linux binary and the config needs to reside in the same place (`$GOPATH/src/github.com/tendermint/tendermint/build`) as you have it for localnet. When you created those, run:
