@@ -75,7 +75,7 @@ Reset database: (unsafe_reset_all)
 make reset
 ```
 
-Add SSH keys for login:
+Add SSH keys for login: (already done)
 ```bash
 make ssh
 ```
