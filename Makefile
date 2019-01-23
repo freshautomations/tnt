@@ -5,10 +5,10 @@ all:
 	@echo "Read the README.md"
 .PHONY: all
 
-# Config: Ansible playbooks: stop, status config, reset, binary, start, ssh
+# Config: Ansible playbooks: stop, status, config, reset, binary, start, ssh
 
 %:
-	@cd config && time ansible-playbook $*.yml
+	@cd playbooks && time ansible-playbook ${ANSIBLE_FLAGS} $*.yml
 
 # Infra: Terraform scripts: plan, apply, destroy
 
