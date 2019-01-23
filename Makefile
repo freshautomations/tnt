@@ -8,7 +8,7 @@ all:
 # Config: Ansible playbooks: stop, status config, reset, binary, start, ssh
 
 %:
-	@cd config && time ansible-playbook $*.yml
+	@cd config && time ansible-playbook ${ANSIBLE_FLAGS} $*.yml
 
 # Infra: Terraform scripts: plan, apply, destroy
 
