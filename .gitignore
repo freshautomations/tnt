@@ -2,3 +2,6 @@
 infra/.terraform/*
 infra/terraform.*
 
+# Python virtual environment
+/venv/
+
