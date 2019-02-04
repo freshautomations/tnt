@@ -1,0 +1,11 @@
+---
+
+# Sets hostname for the host and in Datadog.
+
+- hosts: "{{lookup('env','TESTNET')}}"
+  gather_facts: no
+  become: yes
+  become_user: root
+  tasks:
+  - name: Set hostname
+    command: "hostnamectl set-hostname {{inventory_hostname}}"

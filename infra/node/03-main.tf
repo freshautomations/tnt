@@ -7,7 +7,7 @@ resource aws_route53_record dns {
 }
 
 resource aws_instance node {
-  ami                         = "ami-02a4d38c431124ccc"
+  ami                         = "ami-023b7b08f12db3191"
   instance_type               = "t2.xlarge"
   associate_public_ip_address = true
   key_name                    = "${var.KEY_NAME}"

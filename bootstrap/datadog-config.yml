@@ -1,0 +1,16 @@
+---
+
+# Sets datadog.yaml config
+
+- hosts: "{{lookup('env','TESTNET')}}"
+  gather_facts: no
+  become: yes
+  become_user: root
+  tasks:
+  - name: Set Datadog config
+    template: "src=datadog.yaml.j2 dest=/etc/datadog-agent/datadog.yaml"
+    notify: restart datadog
+
+  handlers:
+  - name: restart datadog
+    systemd: name=datadog-agent state=restarted

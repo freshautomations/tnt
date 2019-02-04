@@ -7,8 +7,13 @@ all:
 
 # Config: Ansible playbooks: stop, status, config, reset, binary, start, ssh
 
+
+set-hostname, datadog-config:
+	@cd playbooks && time ansible-playbook ../bootstrap/$@.yml
+
 %:
 	@cd playbooks && time ansible-playbook ${ANSIBLE_FLAGS} $*.yml
+
 
 # Infra: Terraform scripts: plan, apply, destroy
 
